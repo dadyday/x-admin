@@ -1,6 +1,6 @@
 <template>
   <xLayout>
-    <xNav label="My fancy Dashboard">
+    <xNav label="My cool Dashboard">
       <router-link to="/">Home</router-link>
       <router-link to="/test">Test</router-link>
       <router-link to="/about">About</router-link>
