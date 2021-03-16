@@ -1,3 +1,5 @@
+const CopyPlugin = require("copy-webpack-plugin");
+
 module.exports = {
   pages: {
     index: {
@@ -10,7 +12,7 @@ module.exports = {
   devServer: {
     writeToDisk: true,
   },
-  outputDir: 'www',
+  outputDir: 'public',
   configureWebpack: {
     resolve: {
       alias: {
@@ -25,9 +27,17 @@ module.exports = {
       watchOptions: {
         ignored: [
           'node_modules',
-          'www'
+          'public'
         ]
       },
     },
-  }
+  },
+  chainWebpack: config => {
+    config.plugins.delete('copy')
+    config.plugin('copy').use(CopyPlugin, [[{
+      from: __dirname+"/app/template/assets",
+      to: __dirname+"/public"
+    }]])
+  },
+
 }
