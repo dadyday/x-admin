@@ -9,10 +9,10 @@
       <xInput name="firstname" label="Firstname" width="2*" />
       <xInput name="surname" label="Surname" width="3*" />
     </xRow>
-    
+
     <xRow align="right">
-      <xButton label="Ok" :click="Save" />
-      <xButton label="Cancel" :click="Close" />
+      <xButton label="Ok" :click="Save" default />
+      <xButton label="Cancel" :click="Close" disabled />
     </xRow>
   </xForm>
 </template>
